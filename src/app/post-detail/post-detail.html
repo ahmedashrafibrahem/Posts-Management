@@ -1,0 +1,19 @@
+<div class="container">
+  <div *ngIf="post">
+    <h2>Post Details</h2>
+    <div class="post-detail-card">
+      <h3>ID: {{ post.id }}</h3>
+      <h4>Title: {{ post.title }}</h4>
+      <p>Body: {{ post.body }}</p>
+      <div class="actions">
+        <button (click)="goBack()">Back to Posts</button>
+        <button (click)="editPost(post.id)">Edit Post</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!post" class="no-post">
+    <p>Post not found.</p>
+    <button (click)="goBack()">Back to Posts</button>
+  </div>
+</div>

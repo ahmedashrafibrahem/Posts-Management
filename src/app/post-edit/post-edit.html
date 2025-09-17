@@ -1,0 +1,28 @@
+<div class="container">
+  <div *ngIf="post">
+    <h2>Edit Post</h2>
+    <form (ngSubmit)="savePost()" class="edit-form">
+      <div class="form-group">
+        <label for="editId">ID:</label>
+        <input id="editId" type="text" [(ngModel)]="post.id" name="id" disabled>
+      </div>
+      <div class="form-group">
+        <label for="editTitle">Title:</label>
+        <input id="editTitle" type="text" [(ngModel)]="post.title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="editBody">Body:</label>
+        <textarea id="editBody" [(ngModel)]="post.body" name="body" required></textarea>
+      </div>
+      <div class="actions">
+        <button type="submit">Save Changes</button>
+        <button type="button" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="!post" class="no-post">
+    <p>Post not found for editing.</p>
+    <button (click)="cancelEdit()">Back to Posts</button>
+  </div>
+</div>

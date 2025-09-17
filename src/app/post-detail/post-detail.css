@@ -1,0 +1,63 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f8f8; /* Slightly darker light theme */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.post-detail-card {
+  background-color: #e0e0e0; /* Muted background */
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+}
+
+.post-detail-card h3,
+.post-detail-card h4 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.post-detail-card p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.actions {
+  text-align: right;
+}
+
+button {
+  background-color: #6a9acb; /* Softer blue for buttons */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #547aa6; /* Slightly darker on hover */
+}
+
+.no-post {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}

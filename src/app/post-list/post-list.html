@@ -1,0 +1,40 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>Posts Management</h1>
+  </header>
+
+  <main class="main-content">
+    <section class="add-post-card">
+      <h2>Add New Post</h2>
+      <form (ngSubmit)="addPost()" class="post-form">
+        <div class="form-group">
+          <label for="newTitle">Title</label>
+          <input id="newTitle" type="text" [(ngModel)]="newPost.title" name="newTitle" required placeholder="Enter post title">
+        </div>
+        <div class="form-group">
+          <label for="newBody">Body</label>
+          <textarea id="newBody" [(ngModel)]="newPost.body" name="newBody" required placeholder="Enter post body"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Add Post</button>
+      </form>
+    </section>
+
+    <section class="post-list-section">
+      <h2>All Posts</h2>
+      <div *ngIf="posts.length === 0" class="no-posts-message">
+        <p>No posts available yet. Be the first to add one!</p>
+      </div>
+      <div class="posts-grid">
+        <article *ngFor="let post of posts" class="post-card">
+          <h3 class="post-title">{{ post.title }}</h3>
+          <p class="post-body">{{ post.body }}</p>
+          <div class="post-card-actions">
+            <button (click)="viewPost(post.id)" class="btn-secondary">View Details</button>
+            <button (click)="editPost(post.id)" class="btn-tertiary">Edit</button>
+            <button (click)="deletePost(post.id)" class="btn-danger">Remove</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>
